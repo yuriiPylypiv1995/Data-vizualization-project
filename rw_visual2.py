@@ -1,3 +1,5 @@
+# task 15-3
+
 import matplotlib.pyplot as plt
 
 from random_walk import RandowWalk
@@ -8,14 +10,15 @@ while True:
 
     if show_graph:
         # Create a random walk
-        rw = RandowWalk(50_000)
+        rw = RandowWalk()
         rw.fill_walk()
 
         # Create a random walk graph
         plt.style.use('classic')
         fig, ax = plt.subplots(figsize=(12, 7))
         point_numbers = range(rw.num_points)
-        ax.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues, edgecolor='none', s=1)
+        ax.plot(rw.x_values, rw.y_values, linewidth=0.6, c='deepskyblue')
+        # crs link: https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py
 
         # Hide the axis
         ax.get_xaxis().set_visible(False)
